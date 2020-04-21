@@ -10,7 +10,7 @@ export function formatDOSDateTime(date: Date) {
   dosDate |= (date.getUTCFullYear() - 1980) << 9
 
   const buffer = makeBuffer(4)
-  buffer.setUint16(2, dosTime)
-  buffer.setUint16(0, dosDate)
+  buffer.setUint16(0, dosTime)
+  buffer.setUint16(2, dosDate)
   return buffer.getUint32(0)
 }
